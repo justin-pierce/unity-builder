@@ -7,6 +7,16 @@
 ACTIVATE_LICENSE_PATH="$GITHUB_WORKSPACE/_activate-license"
 mkdir -p "$ACTIVATE_LICENSE_PATH"
 
+# test ssh
+mkdir git_test
+cd git_test
+git clone ssh://git@github.com/NexTech-AR-Solutions/HoloXAPI.git
+git clone ssh://git@github.com/NexTech-AR-Solutions/AREngine.git
+echo "repos cloned:"
+ls
+cd ../
+
+
 #
 # Run steps
 #
