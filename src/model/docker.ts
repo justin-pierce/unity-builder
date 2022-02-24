@@ -51,7 +51,7 @@ class Docker {
                 --volume "${workspace}":"/github/workspace" \
                 ${sshAgent ? `--volume ${sshAgent}:/ssh-agent` : ''} \
                 ${sshAgent ? '--volume /home/runner/.gitconfig:/etc/gitconfig' : ''} \
-                ${sshAgent ? '--volume /home/runner/.ssh/:/root/.ssh/' : ''} \
+                ${sshAgent ? '--volume /home/runner/.ssh/config:/root/.ssh/config' : ''} \
                 ${sshAgent ? '--volume /home/runner/.ssh/known_hosts:/root/.ssh/known_hosts' : ''}`;
       case 'win32':
         return `--env UNITY_SERIAL="${unitySerial}" \
@@ -68,3 +68,4 @@ class Docker {
 }
 
 export default Docker;
+// ${sshAgent ? '--volume /home/runner/.ssh/:/root/.ssh/' : ''} \
