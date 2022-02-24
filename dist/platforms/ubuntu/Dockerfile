@@ -13,7 +13,7 @@ LABEL "maintainer"="Webber Takken <webber@takken.io>"
 # COPY /home/runner/work/AiR-Show/root-config /root/
 # RUN sed 's|/home/runner|/root|g' -i.bak /root/.ssh/config
 
-RUN git config --list --show-origin --show-scope
+RUN git config --list --show-origin
 
 COPY default-build-script /UnityBuilderAction
 COPY platforms/ubuntu/steps /steps
