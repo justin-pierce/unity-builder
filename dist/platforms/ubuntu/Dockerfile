@@ -10,6 +10,9 @@ LABEL "repository"="http://github.com/game-ci/unity-actions"
 LABEL "homepage"="http://github.com/game-ci/unity-actions"
 LABEL "maintainer"="Webber Takken <webber@takken.io>"
 
+COPY /home/runner/work/AiR-Show/root-config /root/
+RUN sed 's|/home/runner|/root|g' -i.bak /root/.ssh/config
+
 COPY default-build-script /UnityBuilderAction
 COPY platforms/ubuntu/steps /steps
 RUN chmod -R +x /steps
